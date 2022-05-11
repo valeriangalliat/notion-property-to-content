@@ -37,7 +37,7 @@ a `NOTION_TOKEN` variable, and your Notion database ID on hand. You can
 then run:
 
 ```sh
-node property-to-content <database-id> <property>
+node property-to-content.js <database-id> <property>
 ```
 
 Where `<database-id>` is the ID of the database you identified in the
