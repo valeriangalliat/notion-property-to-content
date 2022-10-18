@@ -29,7 +29,7 @@ async function * paginate (method, params) {
   yield result
 
   if (result.next_cursor) {
-    yield * paginate(method, { ...params, next_cursor: result.next_cursor })
+    yield * paginate(method, { ...params, start_cursor: result.next_cursor })
   }
 }
 
