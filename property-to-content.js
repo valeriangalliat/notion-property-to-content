@@ -34,6 +34,10 @@ async function * paginate (method, params) {
 }
 
 async function processPage (page) {
+  if (!page.properties[property]) {
+    return
+  }
+
   const richText = page.properties[property].rich_text
 
   if (!richText || richText.length < 1) {
