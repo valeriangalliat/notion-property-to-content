@@ -51,8 +51,6 @@ async function processPage (page) {
     children = markdownToBlocks(richText[0].plain_text)
   }
 
-  const title = page.properties.Name.title[0].plain_text
-
   await notion.blocks.children.append({
     block_id: page.id,
     children
@@ -68,6 +66,8 @@ async function processPage (page) {
       }
     })
   }
+
+  const title = page.properties.Name?.title?.[0]?.plain_text ?? page.id
 
   console.log(`Processed: ${title}`)
 }
